@@ -1,6 +1,21 @@
-## 자바스크립트란 무엇 인가?
+## HTML 속의 자바스크립트
+
+### 페이지 에서 자바스크립트를 불러오는 다양한 방법을 설명해보고 <script> 요소와의 관계에 대해서 설명한다 
 
 
 
-[golink](https://www.google.co.kr/search?q=%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%9E%80&oq=%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%9E%80+&aqs=chrome..69i57j35i39.5623j0j7&sourceid=chrome&ie=UTF-8)
+```javascript
+	
+	//인라인 자바스크립트 
+	<script type="text/javascript">
+		function Hellow(){
+			alert("hi")
+		}
+	</script>
+
+```
+
+
+
+
 
