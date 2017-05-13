@@ -31,7 +31,7 @@
 </head>
 
 <body>
-    
+    <!-- 페이지 콘텐츠 -->
     <script>
         ...
     </script>
@@ -39,8 +39,10 @@
 
 </html>
 
-//script 처리 지연 페이지 전체가 파싱후에 스크립트가 실해되도 상관없을때 사용
-//xhtml 문서에서는 defer="defer" 로 사용합니다.
+//script 처리 지연 페이지 전체가 파싱후에 스크립트가 실해되도 상관없을때
+/*
+    xhtml 문서에서는 defer="defer" 로 사용합니다.    
+*/
 
 <!DOCTYPE>
 <html>
@@ -50,10 +52,47 @@
 </head>
 
 <body>
-   
+   <!-- 페이지 콘텐츠 -->
 </body>
 
 </html>
+
+//비동기 스크립트
+/*
+    text1.js, text2.js 콘텐츠 로드와 상관없이 로드
+    xhtml 문서에서는 async="async" 로 사용합니다.    
+*/
+<!DOCTYPE>
+<html>
+<head>
+	<title>html page</title>
+    <script type="text/javascript" async src="text1.js"></script>
+    <script type="text/javascript" async src="text2.js"></script>
+</head>
+
+<body>
+   <!-- 페이지 콘텐츠 -->
+</body>
+
+</html>
+
+//구식문법
+/*
+    넷스케이프는 모자이크와 협력하여 자바스크립트를 지원하지 않는 브라우져에 대해서 방법을 모색한결과 
+    아래와같이 주석으로 스크립트 내용을 감싸는 방법이다.
+    모든 웹브라우져가 모두 제대로 인식한다. 하지만 더이상 필요하지 않으므로 써서는 안됨.
+
+*/
+
+<script>
+<!--
+    ..script
+-->
+</script>
+
+
+
+
 
 
 ```
