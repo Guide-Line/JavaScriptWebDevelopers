@@ -30,9 +30,30 @@
 
 //데이터 타입
 /*
+    에는 undefined , Null , Boolean , 숫자 , 문자열 등
     
+    - typeof 연산자 사용
+    
+    var msg  = "some string";
+    alert(typeof msg) // string
+    alert(typeof(msg)) //string
+    alert(typeof 100) // number
 
-
+    #함수는 객체(object)로 간주
+    
+    
+    -undefined 타입
+    
+    var 를써서 변수를 정의했지만 초기화 하지않았다면 undefined 가 반환됩니다.
+    
+    var msg;
+    alert(msg == undefined); //true
+    
+    #변수에 undefined 를 지정하지않는다.
+    
+    alert(msg); // undefined
+    alert(age); // ?
+    
 
 */
 
