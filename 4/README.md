@@ -28,7 +28,7 @@
     
 */
 
-//데이터 타입
+//변수 데이터 타입
 /*
     에는 undefined , Null , Boolean , 숫자 , 문자열 등
     
@@ -42,7 +42,7 @@
     #함수는 객체(object)로 간주
     
     
-    -undefined 타입
+    - undefined 타입
     
     var 를써서 변수를 정의했지만 초기화 하지않았다면 undefined 가 반환됩니다.
     
@@ -53,6 +53,33 @@
     
     alert(msg); // undefined
     alert(age); // ?
+    
+    - null 타입
+    
+    var car = null;
+    alert(typeof car); //object
+    
+    명시적으로 car 라는 변수를 아래 코드처럼 사용할수있다.
+    
+    if(car != null){
+        //
+    };
+    
+    undefined 는 null 에서 파생했으므로 표면적으로는 동일한 것으로 정의한다.
+    
+    alert(null == undefined); // ture
+    alert(null === undefined); // ?
+    
+    위 값이 true 인것은 암시적으로 타입을 변경하였기때문이다.
+    
+    - 불리언 타입
+    
+    해당 타입은 true , false 두개의 값만 가진다.
+    
+    var msg ="hi";
+    var msgBoolean = Boolean(msg);
+    alert(msgBoolean) // true
+    
     
 
 */
