@@ -163,15 +163,10 @@
         -콤마 연산자
         -단항 연산자
         -관계 연산자
-        
-        
-     참고 : https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Expressions_and_Operators   
-     
    
      
 
 */
-
 
 
 
@@ -188,6 +183,112 @@
 |숫자|0이 아닌 모든 숫자 포함|0 , NAN|
 |객체|모든객체|null|
 |Undefined|해당없음|undefined|
+
+
+
+###대입연산자
+|이름|복합대입연산자|뜻|
+|:---|:---|:---|
+|대입 연산|	x = y|	x = y
+|덧셈 대입|	x += y|	x = x + y
+|뺄셈 대입|	x -= y	|x = x - y
+|곱셈 대입|	x *= y	|x = x * y
+|나눗셈 대입|	x /= y	|x = x / y
+|나머지 연산 대입|	x %= y	|x = x % y
+|왼쪽 이동 연산 대입|	x <<= y	|x = x << y
+|오른쪽 이동 연산 대입|x >>= y	|x = x >> y
+|부호 없는 오른쪽 이동 연산 대입|	x >>>= y	|x = x >>> y
+|비트 단위 논리곱 연산 대입|	x &= y	|x = x & y
+|비트 단위 배타적 논리합 연산 대입|	x ^= y	|x = x ^ y
+
+###비교연산자
+|연산자|설명|참을 반환하는 예제|
+|:---|:---|:---|
+|같은 (==)	|피연산자들이 같으면 참을 반환합니다.	|3 == var3 ,  "3" == var3 ,   3 == '3' |
+|다른 (!=)	|피연산자들이 다르면 참을 반환합니다.	|var1 != 4 ,   var2 != "3"|
+|엄격한 같은 (===)	|피연산자들이 같고 피연산자들의 같은 형태인 경우 참을 반환합니다. Object.is 와 자바스크립트에서의 같음 을 참고하세요.	|3 === var3|
+|엄격한 다른 (!==)	|피연산자들이 다르거나 형태가 다른 경우 참을 반환합니다.	|var3 !== "3" , 3 !== '3' |
+|~보다 큰 (>)	|좌변의 피연산자 보다 우변의 피연산자가 크면 참을 반환합니다.	|var2 > var1 , "12" > 2 |
+|~보다 크거나 같음 (>=)	|좌변의 피연산자 보다 우변의 피연산자가 크거나 같으면 참을 반환합니다.	|var2 >= var1 ,  var3 >= 1 |
+|~보다 작음 (<)	|좌변의 피연산자 보다 우변의 피연산자가 작으면 참을 반환합니다.	|var1 < var2 , "2" < 12 |
+|~보다 작거나 같음 (<=)	|좌변의 피연산자 보다 우변의 피연산자가 작거나 같으면 참을 반환합니다.	|var1 <= var2 , var2 <= 5|
+
+###산술 연산자
+|연산자|설명|예제|
+|:---|:---|:---|
+|나머지 연산자 (%)	|이항 연산자입니다. 두 피연산자를 나눈후 나머지를 반환합니다.	|12 % 5 returns 2.|
+|증가 연산자 (++)	|단항 연산자입니다. 피연산자에 1을 더합니다. 만약 연산자를 피연산자 앞(++x)에 사용하면, 피연산자에 1을 더한 값을 반환합니다.; 만약 연산자를 피연산자 뒤(x++)에 사용하면, 피연산자에 1을 더하기 전 값을 반환합니다.	|If x is 3, then ++x sets x to 4 and returns 4, whereas x++ returns 3 and, only then, sets x to 4.|
+|감소 연산자 (--)	|단항 연산자입니다. 피연산자로 부터 1을 뺍니다. 반환값은 증가 연산자와 유사합니다.	|If x is 3, then --x sets x to 2 and returns 2, whereas x-- returns 3 and, only then, sets x to 2.|
+|단항 부정 연산자 (-)	|단항 연산자 입니다. 피연산자의 반대값(부호 바뀐값)을 반환합니다.	|If x is 3, then -x returns -3.|
+|숫자화 연산자 (+)	|단항연산자 입니다. 피연산자가 숫자값이 아니라면 피연산자를 숫자로 변환하기를 시도합니다.	|+"3" returns 3.  , +true returns 1. |
+
+###논리 연산자
+
+```javascript
+
+논리 곱 (&&)    :  expr1 && expr2   두개의 연산자가 true 일때만 true 를 반환합니다.
+논리 합 (||)    :  expr1 && expr2   두개의 연산자중 하나라도 true 이면 true 를 반환합니다.
+논리 부정 (!)    :  !expr1  피연산자가 true 로 변환될수 있으면 false을 반환 합니다.
+/*
+    var a1 =  true && true;     // t && t returns true
+    var a2 =  true && false;    // t && f returns false
+    var a3 = false && true;     // f && t returns false
+    var a4 = false && (3 == 4); // f && f returns false
+    var a5 = "Cat" && "Dog";    // t && t returns Dog
+    var a6 = false && "Cat";    // f && t returns false
+    var a7 = "Cat" && false;    // t && f returns false
+    
+    
+    var o1 =  true || true;     // t || t returns true
+    var o2 = false || true;     // f || t returns true
+    var o3 =  true || false;    // t || f returns true
+    var o4 = false || (3 == 4); // f || f returns false
+    var o5 = "Cat" || "Dog";    // t || t returns Cat
+    var o6 = false || "Cat";    // f || t returns Cat
+    var o7 = "Cat" || false;    // t || f returns Cat
+    
+    
+    
+    var n1 = !true;  // !t returns false
+    var n2 = !false; // !f returns true
+    var n3 = !"Cat"; // !t returns false
+
+*/
+
+```
+
+###조건 연산자
+
+조건 ? 값1 : 값2
+
+var status = (age >= 18) ? "adult" : "minor";
+
+;;이 구문은 age 변수가 18보다 같거나 클때 "adult" 값을 status 변수에 대입합니다. 그렇지 않은 경우, 이 구문은 "minor"값을 status변수에 대입합니다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
