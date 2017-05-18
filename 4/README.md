@@ -222,48 +222,7 @@
 |단항 부정 연산자 (-)	|단항 연산자 입니다. 피연산자의 반대값(부호 바뀐값)을 반환합니다.	|If x is 3, then -x returns -3.|
 |숫자화 연산자 (+)	|단항연산자 입니다. 피연산자가 숫자값이 아니라면 피연산자를 숫자로 변환하기를 시도합니다.	|+"3" returns 3.  , +true returns 1. |
 
-###논리 연산자
 
-```javascript
-
-논리 곱 (&&)    :  expr1 && expr2   두개의 연산자가 true 일때만 true 를 반환합니다.
-논리 합 (||)    :  expr1 && expr2   두개의 연산자중 하나라도 true 이면 true 를 반환합니다.
-논리 부정 (!)    :  !expr1  피연산자가 true 로 변환될수 있으면 false을 반환 합니다.
-/*
-    var a1 =  true && true;     // t && t returns true
-    var a2 =  true && false;    // t && f returns false
-    var a3 = false && true;     // f && t returns false
-    var a4 = false && (3 == 4); // f && f returns false
-    var a5 = "Cat" && "Dog";    // t && t returns Dog
-    var a6 = false && "Cat";    // f && t returns false
-    var a7 = "Cat" && false;    // t && f returns false
-    
-    
-    var o1 =  true || true;     // t || t returns true
-    var o2 = false || true;     // f || t returns true
-    var o3 =  true || false;    // t || f returns true
-    var o4 = false || (3 == 4); // f || f returns false
-    var o5 = "Cat" || "Dog";    // t || t returns Cat
-    var o6 = false || "Cat";    // f || t returns Cat
-    var o7 = "Cat" || false;    // t || f returns Cat
-    
-    
-    
-    var n1 = !true;  // !t returns false
-    var n2 = !false; // !f returns true
-    var n3 = !"Cat"; // !t returns false
-
-*/
-
-```
-
-###조건 연산자
-
-조건 ? 값1 : 값2
-
-var status = (age >= 18) ? "adult" : "minor";
-
-;;이 구문은 age 변수가 18보다 같거나 클때 "adult" 값을 status 변수에 대입합니다. 그렇지 않은 경우, 이 구문은 "minor"값을 status변수에 대입합니다.
 
 
 
