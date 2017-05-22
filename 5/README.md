@@ -94,6 +94,14 @@
     doSomething;
   }
   
+  이중 for문
+  for(var i=0; i<5; i++){
+    for(var j=0; j<5; j++){
+        console.log("i" + " : " + i)
+		console.log("j" + " : " + j)
+    }
+  }
+  
   보는 바와같이 while문과 동일한 기능을 한다.
     
 */
@@ -207,7 +215,7 @@
     howManyArgs(1,2)
     howManyArgs(null , undefined ,null , undefined )
     
-    과제)
+    실습1)
     .빈함수를 하나 만들고
     .매개변수를 1개 넘겼을 경우에 10을 더하고
     .매개변수를 2개 넘겼을 경우에는 두개의 매개변수를 더하세요
