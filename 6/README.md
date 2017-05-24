@@ -9,6 +9,25 @@
 /*
     원시값 : undefined, Null , Boolean , 숫자 , 문자열    
     참조값 : 메모리에 저장된 객체
+    
+    
+    
+    var person = new Object();
+    person.name = "john";
+    alert(person.name)' // john
+    
+    
+    var name = "john";
+    name.age = 27;
+    alert(name.age); // undefined  
+    
+    동적으로 프로퍼티즈에 추가할수 있는값은 참조값 뿐이다.
+    
+    
+    var num1 = 5;
+    var num2 = num1;
+    alert(num1)
+    
 
 */
 
