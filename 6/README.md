@@ -95,9 +95,26 @@
     
     %스코프 체인은 변수를 찾아 상위로 올라갈수는 있으나 내려갈수는 없다
     
-    
 */
 
+//가비지 콜렉션 ( garabage collection ) : 자바스크립트 코드 실행중 메모리관리
+/*
+    더 이상 사용하지 않을 변수를 찾아내서 해당 변수가 차지하는 메모리를 회수합니다.
+    이 프로세스는 주기적으로 실행되며, 특정 시점에서 메모리를 회수하게 할 수도 있습니다.
+    
+    
+    function createPerson(name){
+        var localPerson = new Object();
+        localPerson.name = name;
+        return localPerson;
+    }
+    
+    var globalPerson = createPerson("john");
+    
+    globaLPerson = null;
+    
+
+*/
 
 
 
