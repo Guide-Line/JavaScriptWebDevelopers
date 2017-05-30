@@ -6,6 +6,6 @@
   1. [언어의 기초](https://github.com/Guide-Line/JavaScriptWebDevelopers/tree/master/3)
   1. [변수 , 타입 , 연산자](https://github.com/Guide-Line/JavaScriptWebDevelopers/tree/master/4)
   1. [조건문 , 함수](https://github.com/Guide-Line/JavaScriptWebDevelopers/tree/master/5)
-<!--  1. [변수와 스코프 , 메모리](https://github.com/Guide-Line/JavaScriptWebDevelopers/tree/master/6)-->
+  1. [변수와 스코프 , 메모리](https://github.com/Guide-Line/JavaScriptWebDevelopers/tree/master/6)
   
         
