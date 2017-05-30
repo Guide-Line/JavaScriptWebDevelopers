@@ -110,7 +110,7 @@
 
 
     
-    정렬 메서드
+    정렬 메서드 reverse() ,  sort()
     //reverse var values = [1,2,3,4,5];
     values.reverse(); 
     alert(values); // 5,4,3,2,1 //sort 
@@ -118,10 +118,27 @@
     values2.sort(); alert(values2); // 1,2,3,4,5
 
 
-    변환 메서드 ing
-
-
-
+    조작메서드  concat() ,  slice()
+    var values = [1, 2, 3, 4, 5, 6]; 
+    var values2 = values.concat(7, [8, 9]); 
+    console.log(values2); //[1,2,3,4,5,6,7,8,9]
+    변수나 , 배열의 형태로 넘겨도 가능
+    
+    
+    var colors = ["red", "green", "blue", "yellow", "purple"]; 
+    var colors2 = colors.slice(1); 
+    var colors3 = colors.slice(1, 4); 
+    alert(colors2); // green,blue,yellow,purple 
+    alert(colors3); // green,blue,yellow
+    
+    # str.slice(beginIndex[, endIndex])
+    # 매개 변수가 하나이면 해당 번째 부터 끝까지 가져옴
+    # beginIndex 번째부터 endIndex의 바로 앞까지 가져옴
+    
+    부정적인 인덱스
+    console.log(colors.slice(-2)) // ["yellow", "purple"]
+    console.log(colors.slice(-3 , -1)) // ["blue", "yellow"]
+    console.log(colors.slice(-4 , -2)) // ["green", "blue"]
 
 */
 
