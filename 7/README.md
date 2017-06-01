@@ -85,14 +85,16 @@
     alert(colors); // red,blue,green
 
 
-    join메서드를 통해서 배열의 구분자를 변경할 수도 있다
+
+    -join메서드를 통해서 배열의 구분자를 변경할 수도 있다
 
     var colors = ["red","blue","green"]; 
     alert(colors.join(',')); // red,green,blue 
     alert(colors.join('||')); // red||green||blue
     
     
-    스택 메서드 push
+    
+    -스택 메서드 push
     var colors = new Array(); 
     var count = colors.push("red","green") //데이터 2개 추가 
     alert(count); // 2 var item = colors.pop(); 
@@ -100,7 +102,7 @@
     alert(colors.length) // 1
     
     
-    큐 메서드 shift  unshift
+    -큐 메서드 shift  unshift
     var colors = new Array(); 
     var count = colors.push("red","green") //데이터 2개 추가 
     alert(count); // 2 
@@ -110,7 +112,7 @@
 
 
     
-    정렬 메서드 reverse() ,  sort()
+    -정렬 메서드 reverse() ,  sort()
     //reverse var values = [1,2,3,4,5];
     values.reverse(); 
     alert(values); // 5,4,3,2,1 //sort 
@@ -118,12 +120,13 @@
     values2.sort(); alert(values2); // 1,2,3,4,5
 
 
-    조작메서드  concat() ,  slice()
+
+
+    -조작메서드  concat() ,  slice()
     var values = [1, 2, 3, 4, 5, 6]; 
     var values2 = values.concat(7, [8, 9]); 
     console.log(values2); //[1,2,3,4,5,6,7,8,9]
-    변수나 , 배열의 형태로 넘겨도 가능
-    
+    변수나 , 배열의 형태로 넘겨도 가능   
     
     var colors = ["red", "green", "blue", "yellow", "purple"]; 
     var colors2 = colors.slice(1); 
@@ -139,7 +142,73 @@
     console.log(colors.slice(-2)) // ["yellow", "purple"]
     console.log(colors.slice(-3 , -1)) // ["blue", "yellow"]
     console.log(colors.slice(-4 , -2)) // ["green", "blue"]
+    
+    매개변수에 음수를 넘기면 해당 배열의 계수를 더한 값과 같다
+    colors.slice(-4 , -2)  같다   colors.slice(1 , 3)
+    
+    
+    
+    -splice() 메서드 중요 : 배열중간에 데이터를 삽입
+    
+    3가지로 사용 ( 삭제시 , 삽입시 , 대체시)
+    
+    //삭제 
+    var colors = ["red", "green", "blue"]; 
+    var removed = colors.splice(0, 1); //첫번쨰 데이터 제거 
+    console.log(colors); // green,blue 
+    console.log(removed);//red 
+    
+    //삽입 
+    removed = colors.splice(1, 0, "yellow", "orange");//인덱스에 1에 데이터 2개 추가 
+    console.log(colors); //green,yellow,orange,blue 
+    console.log(removed);//빈배열 
+    
+    //대체 removed = colors.splice(1, 1, "red", "purple"); //데이터 2개 추가 1개 제거 
+    console.log(colors); // green,red,purple,orange,blue 
+    console.log(removed);// yellow
+    
+    
+    -위치 메서드  indexOf()  , lastIndexOf()
+    :매개변수는 두개를 사용하며, 첫 번째 매개변수는 검색 할 데이터, 두번째 매개변수는 검색을 시작할 인덱스 입니다.
+    데이터를 찾지 못했다면 -1를 반환합니다.
 
+    var numbers = [1,2,3,4,5,2,4,3,1];
+    console.log(numbers.indexOf(4));    //3
+    console.log(numbers.lastIndexOf(4)); //6
+    console.log(numbers.indexOf(4, 4)); //6
+    console.log(numbers.lastIndexOf(4, 4)); //3
+    
+    -반복 메서드  every  , some , filter , map
+    
+    var numbers = [1,2,3,4,5,2,23];
+    var everyResult = numbers.every(function(item , index , array){
+
+        return(item > 2)
+    });
+    console.log(everyResult) // false : 반환값이 모두 true 여야 true
+
+    var someResult = numbers.some(function(item , index , array){
+
+        return(item > 2)
+    });	    
+    console.log(someResult) // true  : 반환값중에 하나라도 true 이면 true 값
+
+    var filterResult = numbers.filter(function(item , index , array){
+
+        return(item > 2)
+    });
+    console.log(filterResult) // [3, 4, 5, 23]  // 조건에맞는 값만 반환한다
+
+    var mapResult = numbers.map(function(item , index , array){
+
+        //return(item > 2)
+        return item * 2;
+    });
+    console.log(mapResult) // [2, 4, 6, 8, 10, 4, 46] // 결과값을 새 배열에 저장하여 반환한다
+
+
+
+    
 */
 
 
