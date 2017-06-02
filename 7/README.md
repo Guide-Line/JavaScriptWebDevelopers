@@ -207,11 +207,91 @@
     console.log(mapResult) // [2, 4, 6, 8, 10, 4, 46] // 결과값을 새 배열에 저장하여 반환한다
 
 
-
-    
 */
 
+//Date 타입 
+/*    
+    객체생성 
+    
+    var now = new Date();
+    
+    날짜표시 메서드
+    toDateString() : 날짜를 요일, 월, 일, 년 형식으로 표시
+    toTimeString() : 날짜를 시, 분, 초, 타임존 형식으로 표시
+    toLocaleDateString() : 날짜를 요일, 월, 일, 년 형식으로 표시
+    toLocaleTimeString() : 날짜를 시, 분, 초, 타임존, 형식으로, 표시
+    toUTCString() : 날짜를 UTC(협정 세계시)형식으로 표시
 
+
+    날짜/시간 부속 메서드
+
+    getDate() : 로컬 시간을 사용하여 일(월 기준) 값을 반환합니다.
+    getDay() : 로컬 시간을 사용하여 일(주 기준) 값을 반환합니다.
+    getFullYear() : 로컬 시간을 사용하여 연도 값을 반환합니다.
+    getHours() : 로컬 시간을 사용하여 시간 값을 반환합니다.
+    getMilliseconds() : 로컬 시간을 사용하여 밀리초 값을 반환합니다.
+    getMinutes() : 로컬 시간을 사용하여 분 값을 반환합니다.
+    getMonth() : 로컬 시간을 사용하여 월 값을 반환합니다.
+    getSeconds() : 로컬 시간을 사용하여 초 값을 반환합니다.
+    getTime() : Date 개체의 시간 값을 1970년 1월 1일 자정 이후로 밀리초 단위로 반환합니다.
+    getTimezoneOffset() : 호스트 컴퓨터와 UTC(지역 표준시) 사이의 시간 차를 분으로 반환합니다.
+    getUTCDate() : UTC를 사용하여 일(월 기준) 값을 반환합니다.
+    getUTCDay() : UTC를 사용하여 일(주 기준) 값을 반환합니다.
+    getUTCFullYear() : UTC를 사용하여 연도 값을 반환합니다.
+    getUTCHours() : UTC를 사용하여 시간 값을 반환합니다.
+    getUTCMilliseconds() : UTC를 사용하여 밀리초 값을 반환합니다.
+    getUTCMinutes() : UTC를 사용하여 분 값을 반환합니다.
+    getUTCMonth() : UTC를 사용하여 월 값을 반환합니다.
+    getUTCSeconds() : UTC를 사용하여 초 값을 반환합니다.
+    getVarDate() : Date 개체의 VT_DATE 값을 반환합니다.
+    getYear() : 연도 값을 반환합니다.
+    hasOwnProperty() : 개체에 지정된 이름을 가진 속성이 있는지 여부를 나타내는 부울 값을 반환합니다.
+    isPrototypeOf() : 개체가 다른 개체의 프로토타입 체인에 있는지 여부를 나타내는 부울 값을 반환합니다.
+    propertyIsEnumerable() : 지정된 속성이 개체의 일부인지와 열거할 수 있는지 여부를 나타내는 부울 값을 반환합니다.
+    setDate() : 로컬 시간을 사용하여 숫자로 된 날짜(월 기준)를 설정합니다.
+    setFullYear() : 로컬 시간을 사용하여 연도 값을 설정합니다.
+    setHours() : 로컬 시간을 사용하여 시간 값을 설정합니다.
+    setMilliseconds() : 로컬 시간을 사용하여 밀리초 값을 설정합니다.
+    setMinutes() : 로컬 시간을 사용하여 분 값을 설정합니다.
+    setMonth() : 로컬 시간을 사용하여 월 값을 설정합니다.
+    setSeconds() : 로컬 시간을 사용하여 초 값을 설정합니다.
+    setTime() : Date 개체의 날짜와 시간 값을 설정합니다.
+    setUTCDate() : UTC를 사용하여 숫자로 된 날짜(월 기준)를 설정합니다.
+    setUTCFullYear() : UTC를 사용하여 연도 값을 설정합니다.
+    setUTCHours() : UTC를 사용하여 시간 값을 설정합니다.
+    setUTCMilliseconds() : UTC를 사용하여 밀리초 값을 설정합니다.
+    setUTCMinutes() : UTC를 사용하여 분 값을 설정합니다.
+    setUTCMonth() : UTC를 사용하여 월 값을 설정합니다.
+    setUTCSeconds() : UTC를 사용하여 초 값을 설정합니다.
+    setYear() : 로컬 시간을 사용하여 연도 값을 설정합니다.
+    toDateString() : 날짜를 문자열 값으로 반환합니다.
+    toGMTString() : GMT(그리니치 표준시)를 사용하여 문자열로 변환된 날짜를 반환합니다.
+    toISOString() : 날짜를 ISO 형식의 문자열 값으로 반환합니다.
+    toJSON() : JSON serialization 이전에 개체 형식의 날짜를 변환하는 데 사용됩니다.
+    toLocaleDateString() : 호스트 환경의 현재 로캘에 해당하는 문자열 값으로 날짜를 반환합니다.
+    toLocaleString() : 현재 로캘을 사용하여 문자열로 변환된 개체를 반환합니다.
+    toLocaleTimeString() : 호스트 환경의 현재 로캘에 해당하는 문자열 값으로 시간을 반환합니다.
+    toString() : 개체를 나타내는 문자열을 반환합니다.
+    toTimeString() : 시간을 문자열 값으로 반환합니다.
+    toUTCString() : UTC를 사용하여 문자열로 변환된 날짜를 반환합니다.
+    valueOf() : 지정한 개체의 원시 값을 반환합니다.
+*/
+//RegExp 타입  ( Regular Expression )
+/*
+    정규표현식이란 ?
+    정규표현식의 사전적인 의미로는 특정한 규칙을 가진 문자열의 집합을 표현하는데 사용하는 형식 언어입니다. 
+    주로 Programming Language나 Text Editor 등 에서 문자열의 검색과 치환을 위한 용도로 쓰이고 있습니다. 
+    입력한 문자열에서 특정한 조건을 표현할 경우 일반적인 조건문으로는 다소 복잡할 수도 있지만, 
+    정규표현식을 이용하면 매우 간단하게 표현 할 수 있습니다. 
+    하지만 코드가 간단한 만큼 가독성이 떨어져서 표현식을 숙지하지 않으면 이해하기 힘들다는 문제점이 있습니다.
+
+
+    var expression = /pattern/flags;
+    
+    
+
+
+*/
 
 
 
