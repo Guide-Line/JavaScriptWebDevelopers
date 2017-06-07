@@ -80,8 +80,6 @@
     changeColor();
     
     
-    
-    
     function a(){
      var a = 1;        (A)
      function b(){
