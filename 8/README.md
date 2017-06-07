@@ -1,120 +1,130 @@
-## 변수(원시,참조)와 스코프 , 메모리
+## 변수 와 스코프( 유효범위 )
 
-#### 자바스크립트에서 변수를 어떻게 다루는지 봅니다, 변수가 스코프를 벗어났을때 사용하던 메모리를 해제하는 가비지 컬렉션이 자바스크립트에서 어떻게 사용되는지 봅니다.
+#### 자바스크립트에서 변수를 어떻게 다루는지 봅니다, 변수가 스코프를 벗어났을때 
 
 
 ```javascript
-	
-//원시값과 참조값
-/*
-    원시값 : undefined, Null , Boolean , 숫자 , 문자열    
-    참조값 : 메모리에 저장된 객체
-    
-    
-    
-    var person = new Object();
-    person.name = "john";
-    alert(person.name)' // john
-    
-    
-    var name = "john";
-    name.age = 27;
-    alert(name.age); // undefined  
-    
-    동적으로 프로퍼티즈에 추가할수 있는값은 참조값 뿐이다.
-    
-    
-    var num1 = 5;
-    var num2 = num1;
-    alert(num1)
-    
-    
-    객체에도 아래처럼 복사가 가능 ...
-    
-    var obj1 = new Object();
-    var obj2 = obj1;
-    obj1.name ="john";
-    alert(obj2.name); // john
 
-*/
-
-//함수에 매개변수 전달 : 변수 , 매개변수, 함수 
-/*
-    var count= 20;
-    var result =  addTen(count);
-    alert(count);
-    alert(result);
-    function  addTen(num){ // num 은  addTen 의 매개 변수,
-        num += 10; // num 은 지역변수
-        return num;
-    };
-    
-*/
-
-
-//실행 컨텍스트와 스코프
-/*
-    실행 컨텍스트(execution context:EC)는 짧게 ‘컨텍스트’라고 부른다.
-    변수나 함수의 실행 컨텍스트는 다른 데이터에 접근할 수 있는지, 어떻게 행동하는지를 규정한다. 
-    각 실행 컨텍스트에는 변수 객체(variable object:VO)가 연결되어 있으며 해당 컨텍스트에서 정의된 모든 변수와 함수는 이 객체에 존재한다. 
-    이 객체를 코드에서 접근할 수는 없지만 이면에서 데이터를 다룰 때 이 객체를 이용한다.
-    
-    
-    var color ="blue";
-    
-    function changeColor(){
-        var anotherColor = "red";
-        
-        function swapColors(){
-            var tempColor = anotherColor;
-            anotherColor = color;
-            color = tempColor;
-            
-            //color , anotherColor , tempColor 접근가능
+        var vscope = 'global';
+        function fscope(){
+            alert(vscope);
         };
-         
-        //color , anotherColor 접근가능 tempColor 불가능
-        swapColors(); 
-    }
-    // color 만 접근가능
-    changeColor();
-    
-    
-    function a(){
-     var a = 1;        (A)
-     function b(){
-      console.log(a);  (B)
-     }
-     b();
-    }
-    a();
-    
-    위 실행 결과는 ???
-    
-    %스코프 체인은 변수를 찾아 상위로 올라갈수는 있으나 내려갈수는 없다
-    
-*/
-
-//가비지 콜렉션 ( garabage collection ) : 자바스크립트 코드 실행중 메모리관리
-/*
-    더 이상 사용하지 않을 변수를 찾아내서 해당 변수가 차지하는 메모리를 회수합니다.
-    이 프로세스는 주기적으로 실행되며, 특정 시점에서 메모리를 회수하게 할 수도 있습니다.
-    
-    
-    function createPerson(name){
-        var localPerson = new Object();
-        localPerson.name = name;
-        return localPerson;
-    }
-    
-    var globalPerson = createPerson("john");
-    
-    globaLPerson = null;
-    
-
-*/
+        fscope();
 
 
+
+        var vscope = 'global';
+        function fscope(){
+            var vscope = 'local';
+            alert('함수안 '+vscope);
+        };
+        fscope();
+        alert('함수밖 '+vscope);
+    
+    
+        예1)
+            var vscope ="global";
+            function fscope(){
+                var vscope ="local";
+            };
+            alert(vscope); ??
+
+        예2)
+            var vscope ="global";
+            function fscope(){
+                var vscope ="local";
+                vscope ="local";
+            };
+            alert(vscope); ??
+    
+    
+    <효용>
+        function a (){
+            var i = 0; // 지역변수
+        };
+        for(var i = 0; i < 5; i++){
+            a();
+            document.write(i);
+        };
+        //0, 1 ,2 , 3, 4
+
+        function a (){
+            i = 0; // 전역변수
+        };
+        for(i = 0; i < 5; i++){
+            a();
+            document.write(i);
+        };
+        //무한반복
+    
+    <전역변수>
+        ;넓은 의미에서 충돌을 막기위한 변수 생성
+    
+        MYAPP = {}
+        MYAPP.calculator = {
+            'left' : null,
+            'right' : null
+        };
+        MYAPP.coordinate = {
+            'left' : null,
+            'right' : null
+        };
+
+        MYAPP.calculator.left = 10;
+        MYAPP.calculator.right = 20;
+        function sum(){
+            return MYAPP.calculator.left + MYAPP.calculator.right;
+        };
+        document.write(sum());
+
+        ;위처럼 전역변수 조차 작성하기 싫을경우
+        전역변수가 없는 지역변수로만 작성되어있음.
+        %익명함수
+        (function(){
+
+            MYAPP = {}
+            MYAPP.calculator = {
+                'left' : null,
+                'right' : null
+            }
+            MYAPP.coordinate = {
+                'left' : null,
+                'right' : null
+            }
+
+            MYAPP.calculator.left = 10;
+            MYAPP.calculator.right = 20;
+            function sum(){
+                return MYAPP.calculator.left + MYAPP.calculator.right;
+            }
+            document.write(sum());
+
+        }())
+        
+        
+    <유효범위 대상> 은 함수
+            
+        for(var i = 0; i < 1; i++){
+            var name = 'coding everybody';
+        }
+        alert(name);
+        
+    
+        java
+        for(int i = 0; i < 10; i++){
+            String name = "egoing";
+        }
+        System.out.println(name);
+        
+        
+        자바스크립트의 지역변수는 함수에서만 유효하다.
+        
+        
+        
+    <정적유요범위>
+    
+        
+    
 
 ```
 

@@ -111,6 +111,15 @@
     alert(get_arguments(20, 30));
     
     
+    ;함수를 정의하는 다른방법    
+    var numbering = function (){
+        i = 0;
+        while(i < 10){
+            document.write(i);
+            i += 1;
+        }   
+    }
+    numbering();
    
     
 
