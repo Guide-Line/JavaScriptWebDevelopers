@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Untitled Document</title>
+    <script type="text/javascript" src="http://script.auction.co.kr/common/jquery.js"></script>    
+    <style>
+        *{padding:0; border:0; margin:0;}
+        .case{position: relative; width:500px; height: 100px; /*border:1px solid black;*/}
+        .txt{display: block;}
+    </style>
+    <script>
+    
+        $(document).ready(function(){
+            $(".btn").click(function(index){
+                $(this).parent().find(".txt").css("border" , "1px solid red")
+                //console.log( $(this).parent(".case"))
+            });
+        });
+    
+    </script>
+</head>
+<body>
+    <div class="case">
+        
+        <p class="txt">abc</p>
+        
+        <a class="btn" href="">버튼</a>   
+        
+        
+    </div>
+    
+    <div class="case">
+        
+        <p class="txt">abc</p>        
+        
+         <a class="btn" href="">버튼</a>        
+        
+    </div>
+    
+    <div class="case">
+        
+        <p class="txt">abc</p>        
+        
+        <a class="btn" href="">버튼</a>   
+        
+    </div>
+
+    
+</body>
+</html>
