@@ -9,7 +9,7 @@
   1. [함수](https://github.com/Guide-Line/JavaScriptWebDevelopers/tree/master/6)
   1. [배열](https://github.com/Guide-Line/JavaScriptWebDevelopers/tree/master/6-1)
   1. [객체](https://github.com/Guide-Line/JavaScriptWebDevelopers/tree/master/6-2)
-  1. [변수와 스코프 , 메모리](https://github.com/Guide-Line/JavaScriptWebDevelopers/tree/master/8) [예정]
-  <!--1. [참조 타입](https://github.com/Guide-Line/JavaScriptWebDevelopers/tree/master/8)-->
+  1. [변수와 스코프 , 메모리](https://github.com/Guide-Line/JavaScriptWebDevelopers/tree/master/8)
+  <!--1. [참조 타입](https://github.com/Guide-Line/JavaScriptWebDevelopers/tree/master/8)   [예정]-->
   
         
