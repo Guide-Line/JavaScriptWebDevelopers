@@ -11,8 +11,6 @@
         };
         fscope();
 
-
-
         var vscope = 'global';
         function fscope(){
             var vscope = 'local';
@@ -121,9 +119,20 @@
         
         
         
-    <정적유요범위>
+    <정적유요범위> : 함수가 선언된 시점에서 유효범위를 갖는다.
     
-        
+        var i = 5;
+
+        function a(){
+            var i = 10;
+            b();
+        }
+
+        function b(){
+            document.write(i);
+        }
+
+        a(); ? 
     
 
 ```
